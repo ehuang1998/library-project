@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 100vh;
+}
+
+.header {
+    display: grid;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    grid-template-columns: 300px 1fr;
+    background-color: #347ec4;
+    color: white;
+    align-items: center;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.header .login {
+    display: grid;
+    justify-items: end;
+    align-items: center;
+}
+
+
+.main-content {
+
+    background-color: #1d4366;
+
+}
+
+#login {
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#login span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+  
+#login span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+  
+#login:hover span {
+    padding-right: 25px;
+}
+  
+#login:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+
+
+#add-book {
+    border: none;
+    outline: none;
+    font-size: 1.8rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #f3f3f3;
+    background: #2185d5;
+    transition: 0.5s ease;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+  }
+
+.flex h1 {
+    color:#2185d5;
+    text-align: center;
+    padding: 1rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: -1rem -1rem 1rem -1rem;
+    font-size: 3rem;
+    font-weight: bold;
+}  
+
+  #form input[type="text"],
+  #form input[type="number"],
+  select {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border: 0;
+    background-color: #f7f7f7;
+    font-size: 1rem;
+    outline: 0;
+  }
+
+  #modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */    
+  }
+
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 1rem;
+    width: 600px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: fadein;
+    animation-duration: 0.5s;
+    border-radius: 20px;
+  }
+
+  @keyframes fadein {
+    from { opacity: 0}
+    to {opacity: 1}
+  }
