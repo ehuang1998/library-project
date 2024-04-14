@@ -24,21 +24,29 @@ let myLibrary = [];
 // Book Object Constructor
 function Book(title, author, pages, read) {
 
-    this.title = form.title.value;
-    this.author = form.author.value;
-    this.pages = form.pages.value;
-    this.read = form.read.value;
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
 }
 
+
 //Add books to library when new book is submitted and render library
-function addBooktoLibrary(book) {
+function addBooktoLibrary() {
 
     event.preventDefault(); //Prevent error from submitting to backend server
     modal.style.display = "none";
-    let newBook =  new Book(title, author, pages, read);
-    myLibrary.push(newBook);
 
-    displayBooks();
+    let title = document.querySelector("#title").value;
+    let author = document.getElementById("author").value;
+    let pages = document.getElementById("pages").value;
+    let read = document.getElementById("read").value;
+
+    let newBook =  new Book(title, author, pages, read);
+
+    myLibrary.push(newBook); //add book to array
+
+    displayBooks(); //render function
     console.log(myLibrary);
     form.reset();
 
@@ -83,13 +91,15 @@ function createBook(book) {
     readBtn.classList.add('readBtn');
     bookDiv.appendChild(readBtn);
     if (book.read == "Yes") {
-        readBtn.textContent = "Read Status: Read"
+        readBtn.textContent = "Read";
+        readBtn.setAttribute('class', 'readBtn');
     } else if (book.read == "No") {
-        readBtn.textContent = "Read Status: Not Read"
+        readBtn.textContent = "Not Read"
+        readBtn.setAttribute('class', 'readBtnNot');
     }
 
     removeBtn.textContent = 'Remove';
-    removeBtn.setAttribute('id', removeBtn);
+    removeBtn.setAttribute('id', 'removeBtn');
     bookDiv.appendChild(removeBtn);
 
     library.appendChild(bookDiv);
@@ -103,6 +113,13 @@ function createBook(book) {
         displayBooks();
     });
 
+    removeBtn.addEventListener('click', () => removeBook());
+
+}
+
+function removeBook(index) {
+    myLibrary.splice(index, 1);
+    displayBooks();
 }
 
 

@@ -49,15 +49,57 @@ body {
     border-radius: 25px;
     height: 300px;
     width: 200px;
-    padding-top: 20px;
+    padding: 20px 10px 0 10px;
     margin: 20px;
     background-color: #f3f3f3;
+    row-gap: 10px;
+}
+
+.readBtn {
+    margin-top: 0.5rem;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
+    background: rgb(173, 240, 167);
+    font-size: 1rem;
+    font-weight: 600;
+    outline: 0;
+    color: black;
+    width: 100%;
+}
+
+.readBtnNot {
+    margin-top: 0.5rem;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
+    background: rgb(243, 100, 100);
+    font-size: 1rem;
+    font-weight: 600;
+    outline: 0;
+    color: black;
+    width: 100%;
+}
+
+#removeBtn {
+  margin-top: 0.5rem;
+  cursor: pointer;
+  border: 0;
+  border-radius: 5px;
+  padding: 10px;
+  background: rgba(204, 204, 204, 0.979);
+  font-size: 1rem;
+  font-weight: 600;
+  outline: 0;
+  color: black;
+  width: 100%;
 }
 
 .title {
     font-size: 20px;
     font-weight: bold;
-
 }
 
 #login {
@@ -179,11 +221,12 @@ body {
     cursor: pointer;
     border: 0;
     background: #f7f7f7;
-    font-size: 1rem;
     outline: 0;
     font-size: 1.4rem;
     color: #fefefe;
   }
+
+
   
   #form button[type="submit"] {
     background: #2185d5;
